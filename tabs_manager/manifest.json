@@ -1,0 +1,23 @@
+{
+  "name": "My Extension",
+  "version": "0.1",
+  "description": "This extension is a starting point for building a Chrome extension.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "css": ["style.css"],
+    "js": ["popup.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

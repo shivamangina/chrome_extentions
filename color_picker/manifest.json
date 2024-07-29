@@ -1,0 +1,24 @@
+{
+  "name": "Color Picker",
+  "version": "0.1",
+  "description": "This extension is a color picker",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs","scripting","activeTab","storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "css": ["style.css"],
+    "js": ["popup.js"]
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
